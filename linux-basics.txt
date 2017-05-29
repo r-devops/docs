@@ -1,0 +1,58 @@
+
+touch file-name
+rm 
+cp
+mv 
+
+
+/   ->   home/
+			rama/
+			raju/
+			ramesh/
+			rwn0517/
+
+
+		 etc/
+		 boot/
+		 opt/
+		 bin/ , sbin/
+
+
+pwd
+cd /
+
+Editor : Create data/ Update data/ Delete  data/ manuplate data
+
+
+vi / nano / emacs
+
+vi editor:
+vim editor:
+
+vim newfile
+vim existingfile
+
+
+ESC:
+
+Copy		yy
+paste.  	p
+
+Undo : u
+
+Copy Multiple Lines
+paste Multiple Lines
+
+Delete a line
+Delete Multiple Lines
+
+
+Colon :
+
+:w -> save
+:q -> quit
+:wq -> save and quit
+:q! -> quit without saving 
+:/word -> search a word
+:%s/word1/word2/ -> Search and replace
+
