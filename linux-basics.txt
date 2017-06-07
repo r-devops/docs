@@ -56,3 +56,48 @@ Colon :
 :/word -> search a word
 :%s/word1/word2/ -> Search and replace
 
+------------------------------------------
+Deal with system services on RedHAT Family 7:
+-------------------------
+Ex: Taking mariadb as an example
+Start the service
+# systemctl start mariadb
+
+Stop the service
+# systemctl stop mariadb
+
+Restart the service 
+# systemctl restart mariadb
+
+Status of the service
+# systemctl status mariadb
+
+To start the service while system reboot.
+# systemctl enable mariadb
+
+To not start a service while system reboots.
+# systemctl disable mariadb
+
+
+------------------------------------------
+Deal with system services on RedHAT Family <6:
+-------------------------
+Ex: Taking mariadb as an example
+Start the service
+# service mariadb start
+
+Stop the service
+# service mariadb stop
+
+Restart the service 
+# service mariadb restart
+
+Status of the service
+# service mariadb status
+
+To start the service while system reboot.
+# chkconfig mariadb on
+
+To not start a service while system reboots.
+# chkconfig mariadb off
+
