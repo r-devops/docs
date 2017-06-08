@@ -1,11 +1,22 @@
 # Steps to be performed on DB Server.
+#------------------------------------
+
 ```
 # yum install mariadb mariadb-server -y
 # systemctl enable mariadb
 # systemctl start mariadb
-# wget
+# wget https://raw.githubusercontent.com/carreerit/docs/master/tomcat/student.sql
+```
+#### Note :: You need to update the IPAddress / Name of the server in 2nd line of student.sql file.
+#### In my case my tomcat server name was `tomcat1.c.careerit-169300.internal` , you change based on your requirement.
+#### You can get the name of the server by using `hostname -f` command
+```
 # mysql -u root < student.sql
 ```
+
+
+# Steps to be performed on Tomcat Server.
+#------------------------------------
 
 ### 1) Install Tomcat (Binary Distribution)
 ```
