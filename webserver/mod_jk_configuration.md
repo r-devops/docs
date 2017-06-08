@@ -5,7 +5,7 @@
 ### 1) Install web server from source.
 #### https://github.com/carreerit/docs/blob/master/webserver/install.md
 
-### 2) Install Tomcart from Binary Distribution.
+### 2) Install Tomcat from Binary Distribution.
 #### https://github.com/carreerit/docs/blob/master/tomcat/install.md
 
 ### 3) Download and install tomcat connector source in web server.
