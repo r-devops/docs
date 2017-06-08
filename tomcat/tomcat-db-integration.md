@@ -1,5 +1,5 @@
 # Steps to be performed on DB Server.
-#------------------------------------
+
 
 ```
 # yum install mariadb mariadb-server -y
@@ -16,7 +16,7 @@
 
 
 # Steps to be performed on Tomcat Server.
-#------------------------------------
+
 
 ### 1) Install Tomcat (Binary Distribution)
 ```
