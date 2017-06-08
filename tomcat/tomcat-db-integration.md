@@ -1,3 +1,12 @@
+# Steps to be performed on DB Server.
+```
+# yum install mariadb mariadb-server -y
+# systemctl enable mariadb
+# systemctl start mariadb
+# wget
+# mysql -u root < student.sql
+```
+
 ### 1) Install Tomcat (Binary Distribution)
 ```
 Follow install.md file 
@@ -25,6 +34,15 @@ Follow install.md file
 ```
 <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
                maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="root" password="root" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/test"/>
+               username="USERNAME" password="PASSWORD" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://MYSQL_SERVER_IP:3306/DATABASE_NAME"/>
+```
+#### Note :: Change MYSQL SERVER IP , USERNAME, PASSWORD.
+#### In my case , I created DB as `student` and user as `student` and password also as `student`
+#### After chaging those values my configuration looks like following.
+```
+<Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
+               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+               username="student" password="student" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://10.128.0.6:3306/student"/>
 ```
