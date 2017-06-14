@@ -1,7 +1,7 @@
 ### Follow the following commands to install git lab
 ```
 # curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
-# sudo yum install gitlab-ce-9.0.10-ce.0.el7.x86_64
+# sudo yum install gitlab-ce -y
 # gitlab-ctl reconfigure
 ```
 
