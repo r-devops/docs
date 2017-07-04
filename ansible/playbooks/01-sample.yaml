@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: Print Hello World
+      shell: "echo Hello New World"
+
+    - name: Print Hello World with ansible module
+      debug:
+        msg: "Hello New World"
