@@ -1,0 +1,6 @@
+### Accessing variables from inventory
+- hosts: all
+  become: yes
+  tasks:
+    - debug:
+        msg: "Your myname variable = {{ myname }}"

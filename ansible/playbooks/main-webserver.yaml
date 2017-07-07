@@ -1,0 +1,33 @@
+- hosts: all
+  become: true
+  vars:
+        project_name: DEMO
+  tasks:
+    - name: Install web server
+      yum:
+        name: httpd
+        state: latest 
+
+    - name: Start a Web Server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Create {{project_name}}  directory
+      file:
+        path: /var/www/html/{{project_name}}
+        state: directory
+
+    - name: Create index.html
+      lineinfile:
+        path: /var/www/html/{{project_name}}/index.html
+        line: 'Hello from Demo Project'
+        create: yes
+
+    - name: Create info.html
+      lineinfile:
+        path: /var/www/html/{{project_name}}/info.html
+        line: "Hostname = {{facter_gce.instance.hostname}} , OS Distro = {{ansible_distribution}} "
+        create: yes
+

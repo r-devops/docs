@@ -1,0 +1,10 @@
+- hosts: all
+  gather_facts: no
+  vars_prompt:
+    - name: user_name
+      prompt: Enter your Username
+      private: no
+
+  tasks:
+   - debug:
+        msg: "Hello , {{ user_name }}"

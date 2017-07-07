@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+        - name: Task1 - Check a file exists or not
+          shell: 'ls -ld /tmp'
+          register: out
+          ignore_errors: yes
+
+        - name: Task2 - Print the content of out variable
+          debug:
+                msg: "{{out}}"
+          when: out.rc == 0

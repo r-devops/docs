@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  vars:
+        portno: 8000
+  tasks:
+    - debug:
+        msg: "Port number = {{ portno }}"

@@ -1,0 +1,6 @@
+- hosts: all
+  vars_files:
+        - vars-01.yaml
+  tasks:
+   - debug:
+        msg: "Default port = {{ default_port }}"

@@ -1,0 +1,25 @@
+- hosts: all
+  become: yes
+  vars:
+    TOMCAT_URL: "http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz"
+    TOMCAT_LOC: "/opt/apache-tomcat-8.5.16.tar.gz"
+    TOMCAT_MAIN_DIR: "/opt"
+    TOMCAT_DIR: "/opt/tomcat"
+    TOMCAT_DEF_DIR: "/opt/apache-tomcat-8.5.16"
+
+  tasks:
+    - name: Check for previous tomcat
+      shell: "ls -ld {{TOMCAT_DIR}}"
+      register: out
+      ignore_errors: yes
+
+    - name: Download and Extract Tomcat
+      unarchive:
+        src: "{{TOMCAT_URL}}"
+        dest: "{{TOMCAT_MAIN_DIR}}"
+        remote_src: True
+      when: out.rc != 0
+
+    - name: Move tomcat directory 
+      shell: "mv {{TOMCAT_DEF_DIR}} {{TOMCAT_DIR}}"
+      when: out.rc != 0

@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  tasks: 
+        - name: Create redhat 6 file
+          shell: touch /tmp/redhat6
+          when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "6"
+
+        - name: Create redhat 7 file
+          shell: touch /tmp/redhat7
+          when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"

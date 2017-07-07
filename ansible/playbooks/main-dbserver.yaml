@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install DB Server
+      yum: 
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - mariadb
+        - mariadb-server

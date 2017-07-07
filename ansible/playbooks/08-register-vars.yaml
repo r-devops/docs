@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+   - shell: 'id'
+     register: out
+
+   - debug:
+        msg: "ID = {{ out.stdout_lines }}"
