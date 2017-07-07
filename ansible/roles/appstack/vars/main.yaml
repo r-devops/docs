@@ -1,0 +1,19 @@
+web_pack:
+  - httpd
+  - httpd-devel
+
+db_pack:
+  - mariadb
+  - mariadb-server
+
+TOMCAT_URL: "http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz"
+TOMCAT_LOC: "/opt/apache-tomcat-8.5.16.tar.gz"
+TOMCAT_MAIN_DIR: "/opt"
+TOMCAT_DIR: "/opt/tomcat"
+TOMCAT_DEF_DIR: "/opt/apache-tomcat-8.5.16"
+
+MOD_JK_DIR: "/opt/tomcat-connectors-1.2.42-src"
+MOD_JK_URL: "http://www-us.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.42-src.tar.gz"
+MOD_JK_MAIN_DIR: "/opt"
+MOD_JK_DEP:
+  - gcc

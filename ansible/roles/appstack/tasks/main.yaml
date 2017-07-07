@@ -1,0 +1,4 @@
+- include: websetup.yaml
+- include: appsetup.yaml
+- include: dbsetup.yaml
+- include: web-app-integ.yaml

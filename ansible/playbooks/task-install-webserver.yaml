@@ -1,0 +1,10 @@
+- name: Install Web Server
+  yum:
+    name: httpd
+    state: latest
+
+- name: Create index.html file
+  lineinfile:
+    path: /var/www/html/index.html
+    line: 'Hello from Demo Project'
+    create: yes 

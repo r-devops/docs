@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Install Web Server
+      yum:
+        name: httpd
+        state: latest
+      notify: Restart  web service
+
+  handlers:
+    - name: Restart  web service 
+      service:
+        name: httpd
+        state: restarted

@@ -1,0 +1,5 @@
+- name: Install DB Pack
+  yum:
+    name: "{{item}}"
+    state: latest
+  with_items: "{{db_pack}}"

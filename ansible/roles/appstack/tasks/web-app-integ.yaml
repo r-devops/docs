@@ -1,0 +1,22 @@
+- name: Check for previous mod_kj
+  shell: "ls -ld {{MOD_JK_DIR}}"
+  register: out
+  ignore_errors: yes
+
+- name: Download and Extract Mod_JK
+  unarchive:
+    src: "{{MOD_JK_URL}}"
+    dest: "{{MOD_JK_MAIN_DIR}}"
+    remote_src: True
+  when: out.rc != 0
+
+- name: Install mod_jk deps
+  yum:
+    name: "{{item}}"
+    state: latest
+  with_items: "{{ MOD_JK_DEP }}"
+
+- name: Compile and Install mod_jk
+  shell: "./configure --with-apxs=/bin/apxs && make clean && make && make install"
+  args:
+    chdir: "{{MOD_JK_DIR}}/native"

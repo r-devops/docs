@@ -1,0 +1,15 @@
+- name: Check for previous tomcat
+  shell: "ls -ld {{TOMCAT_DIR}}"
+  register: out
+  ignore_errors: yes
+
+- name: Download and Extract Tomcat
+  unarchive:
+    src: "{{TOMCAT_URL}}"
+    dest: "{{TOMCAT_MAIN_DIR}}"
+    remote_src: True
+  when: out.rc != 0
+
+- name: Move tomcat directory
+  shell: "mv {{TOMCAT_DEF_DIR}} {{TOMCAT_DIR}}"
+  when: out.rc != 0
